@@ -12,6 +12,7 @@ import sharedClientConfig from './client.shared'
 import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export default Object.assign({}, sharedClientConfig, {
   mode: 'production',
@@ -171,6 +172,17 @@ export default Object.assign({}, sharedClientConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
+    }),
+
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      // add errors to webpack instead of warnings
+      failOnError: true,
+      // allow import cycles that include an asyncronous import,
+      // e.g. via import(/* webpackMode: "weak" */ './file.js')
+      allowAsyncCycles: false,
+      // set the current working directory for displaying module paths
+      cwd: process.cwd()
     })
   ],
 

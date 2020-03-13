@@ -37,7 +37,7 @@
         <div :class="{preview : true, collapsed: !isShowAll}" v-scroll>
           <div>
             <div class="get-sample" v-show="isPreview" @click="togglePreview">采集样本</div>
-            <div v-for="img in category.items" class="img-item">
+            <div v-for="(img, index) in category.items" class="img-item" :key="index">
               <img :src="img.url" width="80" />
               <div class="remove" @click="remove(img)">x</div>
             </div>

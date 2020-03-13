@@ -11,15 +11,15 @@ class Trainer extends EventEmitter {
 
     this._worker.onmessage = e => {
       switch (e.data.event) {
-      case 'onEpochEnd':
-        this.emit('onEpochEnd', e.data.payload)
-        break
-      case 'onTrainEnd':
-        this.emit('onTrainEnd')
-        break
-      case 'onPredictEnd':
-        this.emit('onPredictEnd', e.data.payload)
-        break
+        case 'onEpochEnd':
+          this.emit('onEpochEnd', e.data.payload)
+          break
+        case 'onTrainEnd':
+          this.emit('onTrainEnd')
+          break
+        case 'onPredictEnd':
+          this.emit('onPredictEnd', e.data.payload)
+          break
       }
     }
 

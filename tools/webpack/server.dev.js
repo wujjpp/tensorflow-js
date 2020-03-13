@@ -6,6 +6,7 @@ import webpack from 'webpack'
 import path from 'path'
 import serverSharedConfig from './server.shared'
 import marked from 'marked'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 const renderer = new marked.Renderer()
 
@@ -134,6 +135,17 @@ export default Object.assign({}, serverSharedConfig, {
 
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
+    }),
+
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      // add errors to webpack instead of warnings
+      failOnError: true,
+      // allow import cycles that include an asyncronous import,
+      // e.g. via import(/* webpackMode: "weak" */ './file.js')
+      allowAsyncCycles: false,
+      // set the current working directory for displaying module paths
+      cwd: process.cwd()
     })
   ],
 

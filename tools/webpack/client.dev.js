@@ -7,6 +7,7 @@ import VueLoaderPlugin from 'vue-loader/lib/plugin'
 import sharedClientConfig from './client.shared'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export default Object.assign({}, sharedClientConfig, {
   mode: 'development',
@@ -192,6 +193,17 @@ export default Object.assign({}, sharedClientConfig, {
       filename: 'index.html',
       template: 'src/index.html',
       inject: true
+    }),
+
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      // add errors to webpack instead of warnings
+      failOnError: true,
+      // allow import cycles that include an asyncronous import,
+      // e.g. via import(/* webpackMode: "weak" */ './file.js')
+      allowAsyncCycles: false,
+      // set the current working directory for displaying module paths
+      cwd: process.cwd()
     })
   ],
 

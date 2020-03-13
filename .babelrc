@@ -4,6 +4,7 @@
   ],
   "plugins": [
     "add-module-exports",
+    "@babel/plugin-transform-runtime",
     "@babel/plugin-transform-modules-umd",
     "@babel/plugin-transform-modules-amd",
     [

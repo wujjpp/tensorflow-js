@@ -9,7 +9,7 @@
           @add-sample="onAddSample"
           @name-changed="onNameChanged"
           @remove-item="onRemoveItem"
-          :videoSettings="videoSettings"
+          :video-settings="videoSettings"
           :category="category"
         />
         <div class="panel item add-item gap" @click="addNewCategory">+ 添加新分类</div>
@@ -33,7 +33,7 @@
           </div>
           <div class="catetory-items">
             <div class="gap label">{{state.itemName}}</div>
-            <div v-for="category in categories" class="catetory-item gap">
+            <div v-for="(category,index) in categories" class="catetory-item gap" :key="index">
               <div class="progress" :style="{width: category.percent * 100 + '%'}"></div>
               {{category.name + '(' + (category.percent * 100).toFixed(2) + '%' + ')'}}
             </div>

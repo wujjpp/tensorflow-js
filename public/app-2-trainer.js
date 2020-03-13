@@ -9,12 +9,12 @@ let model
 
 self.addEventListener('message', function (e) {
   switch (e.data.event) {
-  case 'onTrain':
-    train(e.data.payload)
-    break
-  case 'onPredict':
-    predict(e.data.payload)
-    break
+    case 'onTrain':
+      train(e.data.payload)
+      break
+    case 'onPredict':
+      predict(e.data.payload)
+      break
   }
 }, false)
 
