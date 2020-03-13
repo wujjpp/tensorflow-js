@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?lork6');
+  src:  url('fonts/icomoon.eot?lork6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?lork6') format('truetype'),
+    url('fonts/icomoon.woff?lork6') format('woff'),
+    url('fonts/icomoon.svg?lork6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i, .icomoon-liga {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-camera:before {
+  content: "\e90f";
+}
+.icon-compass:before {
+  content: "\e949";
+}
+.icon-rocket:before {
+  content: "\e9a5";
+}
+.icon-arrow-right:before {
+  content: "\ea34";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}

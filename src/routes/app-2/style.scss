@@ -1,0 +1,38 @@
+.app-2 {
+  color: #a4a6a8;
+
+  >.preview-container {
+    text-align: center;
+
+    >.preview-board {
+      border: 1px solid #ccc;
+    }
+  }
+
+  >.board-container {
+    text-align: center;
+
+    >table {
+      margin: auto;
+
+      td {
+        text-align: right;
+
+        &.text-center {
+          text-align: center;
+        }
+      }
+
+      td+td {
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+
+    .chart-container {
+      width: 50%;
+      float: left;
+      height: 200px;
+    }
+  }
+}

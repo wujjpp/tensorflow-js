@@ -1,0 +1,98 @@
+.app-category {
+  .header {
+    border-bottom: #E5E5E5 1px solid;
+    padding: 15px;
+  }
+
+  input {
+    border: 0;
+    width: 60px;
+
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.edit {
+      border-bottom: #E5E5E5 1px solid;
+    }
+  }
+
+  .body {
+    padding: 15px;
+
+    .sample-count {
+      float: left;
+    }
+
+    .show-all {
+      float: right;
+      color: #128bed;
+      cursor: pointer;
+
+      &:hover {
+        color: darken($color: #128bed, $amount: 15%);
+      }
+    }
+
+    >.capture {
+      padding-top: 15px;
+      text-align: center;
+
+      >.toolbox {
+        margin-top: 15px;
+      }
+    }
+
+    >.preview {
+      margin-top: 15px;
+      vertical-align: top;
+      max-height: 250px;
+      overflow: hidden;
+
+      &.collapsed {
+        height: 61px;
+        overflow: hidden;
+      }
+
+      .get-sample {
+        background-color: #eaeaea;
+        color: #128bed;
+        display: inline-block;
+        width: 80px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        margin-right: -1px;
+        cursor: pointer;
+
+        transition: background-color .3s;
+
+        &:hover {
+          background-color: lighten($color: #eaeaea, $amount: 3%);
+        }
+      }
+
+      .img-item {
+        position: relative;
+        padding: 0 3px 0 0;
+        display: inline-block;
+        vertical-align: top;
+
+        >.remove {
+          position: absolute;
+          right: 5px;
+          color: #128bed;
+          top: -6px;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:hover {
+            color: lighten($color: #128bed, $amount: 15%)
+          }
+        }
+      }
+    }
+  }
+}
