@@ -1,4 +1,4 @@
-# Tensorflow.js 样式样例
+# Tensorflow.js 演示样例
 
 ## How to Install
 
